@@ -1,3 +1,15 @@
+/*
+	title: 		Hangman
+	author: 	Cindy Chunkie
+	date: 		05.15.2015
+	desp: 		a word guessing game
+
+*/
+
+
+
+
+
 //declare a global 
 var globalWord;
 var inputCounter = [];
