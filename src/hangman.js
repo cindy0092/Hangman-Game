@@ -1,7 +1,7 @@
 //declare a global 
 var globalWord;
 var inputCounter = [];
-var counter = 6;
+var counter = 7;
 
 function RandomWord() {
 	var requestStr = "http://randomword.setgetgo.com/get.php";
@@ -37,13 +37,14 @@ function RandomWord() {
 function RandomWordComplete(data) 
 {
 	var generatedWords = document.getElementById("generatedWords");
+	data.Word = data.Word.toLowerCase();
 	console.log(data.Word);
 	globalWord = data.Word.split("");
 	globalWord.splice(-2);
 	_.each(globalWord, function(item)
 	{
 		inputCounter.push(0);
-		$(generatedWords).append("-");
+		$(generatedWords).append("<font size='10'>"+"_"+"</font>"+" ");
 	});
 	$("#h2").append("Chances Left: "+ counter);
 }
@@ -85,7 +86,7 @@ $(document).ready(function() {
 //___________________checking if the input is correct________________________________
 	
 	function checkInput(userInput, word){
-		$incorrectArea = $("#incorrectArea");
+		$incorrectArea = $("#incorrect");
 		if(_.contains(word, userInput))
 		{ //if input is correct
 			$(generatedWords).empty();
@@ -102,7 +103,7 @@ $(document).ready(function() {
 	   				}
 	   				else
 	   				{
-	   					$(generatedWords).append("_"+" ");
+	   					$(generatedWords).append("<font size='10'>"+ "_"+"</font>"+" ");
 	   				}
 	   			});
 	   	}
@@ -118,13 +119,13 @@ $(document).ready(function() {
 //___________counting the user's lives_______________________________________
 	function winOrLose(Arrcounter, lifeCounter){
 		if(lifeCounter === 0){
-			alert("you lose");
-			counter = 6;
+			alert("you lose, correct answer: "+ globalWord.join(""));
+			counter = 7;
 			inputCounter = [];
 		}
 		else if(_.every(Arrcounter)){
 			alert("you win");
-			counter = 6;
+			counter = 7;
 			inputCounter = [];			
 		}
 	}

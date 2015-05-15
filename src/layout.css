@@ -34,3 +34,9 @@ form{
 	color: #fff;
 	-webkit-appearance: none;
 }
+#generatedWords{
+	font-size:30px;
+}
+#incorrect{
+	font-size:40px;
+}
