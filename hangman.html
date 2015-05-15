@@ -3,12 +3,15 @@
 	<script type="text/javascript" src="lib/jquery.js"></script>
 	<script type="text/javascript" src="lib/underscore.js"></script>
 	<script type="text/javascript" src="src/hangman.js"></script>
+	<link rel="stylesheet" text="text/css" href="src/layout.css">
 </head>
 <body>
+	
 	<form id="hangman">
-		<!--<input type="submit" id="button" value="game start"></input>-->
+		<h2 id="title"> HANGMAN</h2>
+		<h2 id="h2"></h2>
 		<input type="text" id="letterBox" maxlength="1" placeholder"Enter a letter" value=""/><button type="submit" id="guessButton">Guess</button>
 		<div id="generatedWords"></div>
-		<div id="incorrectArea"></div>
+		<div id="incorrectArea">Incorrect Guess</div>
 	</form>
 </body>
